@@ -108,7 +108,7 @@ You can find a list of which properties trigger which CRP components at https://
 ## Forcing New Layers
 
 Sometimes moving an element to its own layer can help reduce paint calls. You do this by adding the will-change attribute to a class, or by utilizing the null transform hack:
-'''
+```
 //will-change
 .circle {
     will-change: transform;
@@ -118,4 +118,4 @@ Sometimes moving an element to its own layer can help reduce paint calls. You do
 .circle {
     transform: translateZ(0);
 }
-'''
+```
