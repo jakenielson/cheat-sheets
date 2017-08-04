@@ -45,3 +45,56 @@ You can fire scripts on the onLoad event if they don't modify the DOM or CSSOM. 
 
 You can also use async scripts, which run separately from the render path. You can make a script async by adding the async attribute:
 `<script src="app.js" async></script>`
+
+## RAIL
+
+RAIL stands for Response, Animation, Idle, Load. Each of these events have a unique window for work to be done:
+* Response: 100ms
+* Animation: 16ms (10-12ms)
+* Idle 50ms
+* Load 1s
+
+Since the browser has some housekeeping to do, you realistically only have 10-12ms to do work for an animation to maintain 60 fps.
+
+## requestAnimationFrame
+
+The requestAnimationFrame function is used to ensure that code is run at the beginning of each frame:
+```
+function animate(){
+    //Do Animation Work
+    requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+```
+
+The animation is initialized by calling requestAnimationFrame with the animate function as a parameter. The animation continues when animate re-calls requestAnimationFrame. This creates a loop that iterates at the start of every frame.
+
+## Web Workers
+
+Web workers are special javascript files that take care of work away from the main thread, in a "worker" thread. This allows heavy lifting to be done without affecting performance.
+
+The following example creates a worker that multiplies two numbers and returns the result:
+```
+//main.js
+
+var myWorker = new Worker('worker.js'); //spawn the worker
+
+first.onChange = function(){
+    myWorker.postMessage([first.value, second.value]); //post a message to the worker with the numbers
+}
+second.onChange = function(){
+    myWorker.postMessage([first.value, second.value]); //post a message to the worker with the numbers
+}
+
+myWorker.onMessage = function(e){
+    result.textContent = e.data; //write the result to an element
+}
+```
+```
+//worker.js
+
+onMessage = function(e){
+    var workerResult = 'Result ' + (e.data[0]*e.data[1]); //calculate the result
+    postMessage(workerResult); //post the result
+}
+```
