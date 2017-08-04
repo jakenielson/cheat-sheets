@@ -29,3 +29,19 @@ You can use the Cache Control superheader to control if and for how long a page 
 * Cache-Control: no-cache
 * Cache-Control: public
 * Cache-Control: private
+
+## Controlling Linked CSS with Media Queries
+
+The media attribute can be added to a css link to control if and when that file is fetched.
+
+```
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-print.css" media="print">
+```
+
+## Controlling Script Timing
+
+You can fire scripts on the onLoad event if they don't modify the DOM or CSSOM. This allows your page to completely load before being bogged down by the scripts.
+
+You can also use async scripts, which run separately from the render path. You can make a script async by adding the async attribute:
+`<script src="app.js" async></script>`
