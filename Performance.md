@@ -98,3 +98,24 @@ onMessage = function(e){
     postMessage(workerResult); //post the result
 }
 ```
+
+## Forced Synchronous Layout
+
+Really look out for forced synchronous layout in your javascript files. You don't want to trigger layout in loops, and you don't want to trigger layout before you trigger styles. Both of these will cause unnecessary backtracking in the CRP.
+
+You can find a list of which properties trigger which CRP components at https://csstriggers.com/.
+
+## Forcing New Layers
+
+Sometimes moving an element to its own layer can help reduce paint calls. You do this by adding the will-change attribute to a class, or by utilizing the null transform hack:
+'''
+//will-change
+.circle {
+    will-change: transform;
+}
+
+//null transform hack
+.circle {
+    transform: translateZ(0);
+}
+'''
