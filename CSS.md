@@ -129,3 +129,35 @@ h1, h2 {
   font-family: "Courier New", Courier, monospace;
 }
 ```
+
+### Size of Type
+
+The `font-size` property specifies the size of a font. This can be declared in px, %, or em.
+
+```
+body {
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 12px;
+}
+h1 {
+  font-size: 200%;
+}
+h2 {
+  font-size: 1.3em;
+}
+```
+
+### More Fonts
+
+`@font-face` specifies a path to a font which will be downloaded if it is not on the user's machine.
+
+```
+@font-face {
+  font-family: 'ChunkFiveRegular':
+  src: url('fonts/chunkfive.eot');
+  src: url('fonts/chunkfive.eot?#iefix') format('embedded-opentype'),
+       url('fonts/chunkfive.woff') format('woff'),
+       url('fonts/chunkfive.ttf') format('truetype'),
+       url('fonts/chunkfive.svg#ChunkFiveRegular') format('svg');
+}
+```
