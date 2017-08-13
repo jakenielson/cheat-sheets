@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [Basics](#basics)
 2. [Color](#color)
+3. [Text](#text)
 
 ## Basics <a name="basics"></a>
 
@@ -71,5 +72,58 @@ h2 {
 }
 p {
   background-color: white;
+}
+```
+### Opacity
+
+The `opacity` property specifies the opacity of an element and any of its child elements. The value is a number between 0.0 and 1.0.
+
+The rgba color property includes an `alpha` value that indicates opacity.
+
+```
+p.one {
+  background-color: rgb(0,0,0);
+  opacity: 0.5;
+}
+p.two {
+  background-color: rgb(0, 0, 0); // You should offer an rgb fallback in case rgba isn't supported
+  background-color: rgba(0, 0, 0, 0.5);
+}
+```
+
+### HSL Colors
+
+CSS3 includes a new way to specify colors called HSL (Hue, Saturation, Lightness).
+
+**HUE** specifies an angle on a color wheel between 0 and 360.
+
+**SATURATION** specifies the amount of gray in a color between 0% (full grey) and 100% (no gray).
+
+**LIGHTNESS** specifies the amount of white or black in a color, from 0% (black) to 100% (white).
+
+```
+body {
+  background-color: #C8C8C8; // Fallback
+  background-color: hsl(0, 0%, 78%);
+}
+```
+
+## Text <a name="text"></a>
+
+### Specifying Typefaces
+
+The `font-family` property specifies the typeface used for any text inside the element.
+
+You can specify a list of fonts separated by commas to provide alternatives for the browser.
+
+```
+body {
+  font-famiy: Georgia, Times, serif;
+}
+h1, h2 {
+  font-family: Arial, Verdana, sans-serif;
+}
+.credits {
+  font-family: "Courier New", Courier, monospace;
 }
 ```
