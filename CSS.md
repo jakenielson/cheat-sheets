@@ -35,7 +35,9 @@
 ### Cascading and Inheritance
 
 **Last Rule**: If two selectors are identical, the latter takes precedence.
+
 **Specificity**: If one selector is more specific than the others, it takes precedence.
+
 **Inheritance**: The `inherit` value forces properties to inherit values from their parent elements: `padding: inherit;`
 
 ## Color <a name="color"></a>
