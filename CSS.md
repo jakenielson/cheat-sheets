@@ -31,6 +31,12 @@
 * Descendant: `p a {}`
 * Adjacent sibling: `h1+p {}`
 * General sibling: `h1~p {}`
+* Has Attribute: `p[class] {}`
+* Has Attribute and Specific Value: `p[class="dog"] {}`
+* Has Attribute and Value in List: `p[class~="dog"] {}`
+* Has Attribute and String Starts List: `p[class^"d"] {}`
+* Has Attribute and String in List: `p[class*"do"] {}`
+* Has Attribute and String Ends List: `p[class$"og"] {}`
 
 ### Cascading and Inheritance
 
@@ -161,3 +167,156 @@ h2 {
        url('fonts/chunkfive.svg#ChunkFiveRegular') format('svg');
 }
 ```
+
+### Styling and Decorating Text
+
+The `font-weight` property controls text boldness.
+
+```
+.credits {
+  font-weight: bold;
+}
+```
+
+The `font-style` property controls text italics.
+
+```
+.credits {
+  font-style: italic;
+}
+```
+
+The `text-transform` property controls text case.
+
+```
+h1 {
+  text-transform: uppercase;
+}
+h2 {
+  text-transform: lowercase;
+}
+.credits {
+  text-transform: capitalize;
+}
+```
+
+The `text-decoration` property controls underlines and strikethroughs.
+
+```
+.credits {
+  text-decoration: underline;
+}
+.strike {
+  text-decoration: line-through;
+}
+a {
+  text-decoration: none; // Remove default underline from links
+}
+```
+
+### Positioning Text
+
+The `line-height` property controls leading.
+
+```
+p {
+  line-height: 1.4em;
+}
+```
+
+The `letter-spacing` and `word-spacing` properties control kerning.
+
+```
+h1, h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.credits {
+  font-weight: bold;
+  word-spacing: 1em;
+}
+```
+
+The `text-align` property controls the alignment of text.
+
+```
+h1 {
+  text-align: left;
+}
+p {
+  text-align: justify;
+}
+.credits {
+  text-align: right;
+}
+```
+
+The `vertical-align` property controls the vertical alignment of text in relation to in-line elements.
+
+```
+#six-months {
+  vertical-align: text-top;
+}
+#one-year {
+  vertical-align: baseline;
+}
+#two-years {
+  vertical-align: text-bottom;
+}
+```
+
+The `text-indent` property controls text indentation.
+
+```
+.credits {
+  text-indent: 20px;
+}
+```
+
+The `text-shadow` property controls drop-shadows on text.
+
+```
+p {
+  text-shadow: 2px 2px 7px #111111; //x, y, blur, color
+}
+```
+
+### Text Pseudoelements
+
+The `:first-letter` pseudoelement specifies the first letter of an element.
+
+```
+p.intro:first-letter {
+  font-size: 200%;
+}
+```
+
+The `:first-line` pseudoelement specifies the first line of text in an element.
+
+```
+p.intro:first-line {
+  font-weight: bold;
+}
+```
+
+The `:link` `:visited` `:hover` `:active` and `:focus` pseudoelements specify the status of a link/input.
+
+```
+a:link {
+    color: deeppink;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: blue;
+}
+a:active {
+    color: darkcyan;
+}
+input.text:focus {
+  color: grey;
+}
+```
+
+The
