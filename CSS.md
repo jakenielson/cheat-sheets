@@ -318,5 +318,3 @@ input.text:focus {
   color: grey;
 }
 ```
-
-The
